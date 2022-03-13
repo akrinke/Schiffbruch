@@ -204,7 +204,6 @@ RGBSTRUCT GetPixel(short x, short y, sf::Image *img)
 
     // TODO: more efficient
     if (x < 0 || y < 0 || x >= int(img->getSize().x) || y >= int(img->getSize().y)) {
-        rgbStruct.r = 0;
         return{};
     }
     if (!img) {

@@ -20,13 +20,13 @@
 Application *Application::s_instance;
 
 Application::Application(const std::string &name)
-    : m_window({MAX_SCREEN_X, MAX_SCREEN_Y}, name, sf::Style::None)
+    : m_window({MAX_SCREEN_X, MAX_SCREEN_Y}, name, sf::Style::Default)
 , m_name(name)
 , m_time(std::time(nullptr))
 {
     // holy shit sfml
     // have to do this entire dance because SFML is a piling steam of shit
-    const sf::Vector2u size(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height) ;
+    const sf::Vector2u size(MAX_SCREEN_X, MAX_SCREEN_Y) ;
     m_window.setSize(size);
     m_window.setPosition({0, 0});
 
